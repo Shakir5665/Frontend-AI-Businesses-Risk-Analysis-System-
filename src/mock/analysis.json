@@ -1,0 +1,40 @@
+{
+  "id": "analysis-001",
+  "productName": "Wireless Bluetooth Headphones Pro",
+  "platform": "Amazon",
+  "analyzedAt": "2026-07-08T06:30:00Z",
+  "status": "completed",
+  "healthScore": 68,
+  "businessStatus": "Moderate Risk",
+  "totalReviewsAnalyzed": 432,
+  "sentimentBreakdown": [
+    { "name": "Positive", "value": 54, "color": "#10b981" },
+    { "name": "Neutral",  "value": 18, "color": "#f59e0b" },
+    { "name": "Negative", "value": 28, "color": "#ef4444" }
+  ],
+  "aspectScores": [
+    { "aspect": "Sound Quality",    "score": 80 },
+    { "aspect": "Battery Life",     "score": 72 },
+    { "aspect": "Comfort",          "score": 65 },
+    { "aspect": "Build Quality",    "score": 58 },
+    { "aspect": "Value for Money",  "score": 70 }
+  ],
+  "evidence": [
+    { "id": "e1", "type": "positive", "text": "The sound quality is absolutely amazing for this price range.", "source": "Amazon Review", "rating": 5, "date": "2026-06-15" },
+    { "id": "e2", "type": "negative", "text": "The ear cups feel cheap and the headband cracked after 2 months.", "source": "Amazon Review", "rating": 2, "date": "2026-06-20" },
+    { "id": "e3", "type": "neutral",  "text": "Battery lasts about 20 hours which is decent.", "source": "Amazon Review", "rating": 3, "date": "2026-06-18" },
+    { "id": "e4", "type": "negative", "text": "Bluetooth connection drops every few minutes. Very frustrating.", "source": "Amazon Review", "rating": 1, "date": "2026-07-01" },
+    { "id": "e5", "type": "positive", "text": "Best headphones I've owned. Crystal clear calls and great music.", "source": "Amazon Review", "rating": 5, "date": "2026-07-03" }
+  ],
+  "recommendations": [
+    { "id": "r1", "title": "Address build quality issues",      "description": "Upgrade the ear cup and headband materials. Source from a better supplier.", "category": "Product Quality", "impact": "High",   "effort": "High",   "priority": 1 },
+    { "id": "r2", "title": "Fix Bluetooth stability",           "description": "Release firmware update to fix Bluetooth 5.0 connection drops.",           "category": "Technical",        "impact": "High",   "effort": "Medium", "priority": 2 },
+    { "id": "r3", "title": "Improve packaging presentation",    "description": "Add premium unboxing experience to justify price point.",                   "category": "Branding",         "impact": "Medium", "effort": "Low",    "priority": 3 },
+    { "id": "r4", "title": "Respond to negative reviews",       "description": "Proactively engage with 1-2 star reviews to offer replacements.",           "category": "Customer Service", "impact": "Medium", "effort": "Low",    "priority": 4 }
+  ],
+  "riskFlags": [
+    { "flag": "High return rate detected",            "severity": "high"   },
+    { "flag": "Build quality complaints increasing",  "severity": "high"   },
+    { "flag": "Mixed comfort feedback",               "severity": "medium" }
+  ]
+}

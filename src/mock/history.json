@@ -1,0 +1,17 @@
+{
+  "total": 12,
+  "page": 1,
+  "pageSize": 10,
+  "results": [
+    { "id": "analysis-001", "productName": "Wireless Bluetooth Headphones Pro", "platform": "Amazon",    "healthScore": 68, "status": "completed", "analyzedAt": "2026-07-08T06:30:00Z", "totalReviews": 432 },
+    { "id": "analysis-002", "productName": "Smart Fitness Tracker Band",        "platform": "Shopify",   "healthScore": 81, "status": "completed", "analyzedAt": "2026-07-06T14:15:00Z", "totalReviews": 289 },
+    { "id": "analysis-003", "productName": "Portable Solar Charger 20000mAh",  "platform": "Amazon",    "healthScore": 55, "status": "completed", "analyzedAt": "2026-07-04T09:00:00Z", "totalReviews": 174 },
+    { "id": "analysis-004", "productName": "Ergonomic Office Chair Pro",        "platform": "eBay",      "healthScore": 74, "status": "completed", "analyzedAt": "2026-07-01T11:45:00Z", "totalReviews": 521 },
+    { "id": "analysis-005", "productName": "Stainless Steel Water Bottle 1L",   "platform": "Amazon",    "healthScore": 89, "status": "completed", "analyzedAt": "2026-06-28T08:20:00Z", "totalReviews": 763 },
+    { "id": "analysis-006", "productName": "LED Ring Light 18 inch",            "platform": "Shopify",   "healthScore": 62, "status": "completed", "analyzedAt": "2026-06-25T16:00:00Z", "totalReviews": 318 },
+    { "id": "analysis-007", "productName": "Mechanical Gaming Keyboard RGB",    "platform": "Amazon",    "healthScore": 76, "status": "completed", "analyzedAt": "2026-06-22T12:30:00Z", "totalReviews": 445 },
+    { "id": "analysis-008", "productName": "Yoga Mat Non-Slip 6mm",             "platform": "Etsy",      "healthScore": 91, "status": "completed", "analyzedAt": "2026-06-19T07:45:00Z", "totalReviews": 204 },
+    { "id": "analysis-009", "productName": "Cold Brew Coffee Maker Kit",        "platform": "Amazon",    "healthScore": 84, "status": "completed", "analyzedAt": "2026-06-16T10:00:00Z", "totalReviews": 388 },
+    { "id": "analysis-010", "productName": "Resistance Bands Set of 5",         "platform": "Shopify",   "healthScore": 79, "status": "completed", "analyzedAt": "2026-06-12T15:20:00Z", "totalReviews": 276 }
+  ]
+}

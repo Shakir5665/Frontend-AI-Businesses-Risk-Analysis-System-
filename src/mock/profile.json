@@ -1,0 +1,29 @@
+{
+  "id": "user-001",
+  "firstName": "Alex",
+  "lastName": "Johnson",
+  "email": "alex.johnson@example.com",
+  "company": "TechVentures Inc.",
+  "role": "Business Analyst",
+  "avatar": null,
+  "joinedAt": "2026-01-15T00:00:00Z",
+  "plan": "Pro",
+  "analysisCount": 12,
+  "settings": {
+    "theme": "dark",
+    "notifications": {
+      "email": true,
+      "push": false,
+      "analysisComplete": true,
+      "weeklyReport": true
+    },
+    "language": "en",
+    "timezone": "Asia/Colombo"
+  },
+  "stats": {
+    "totalAnalyses": 12,
+    "avgHealthScore": 74,
+    "mostAnalyzedPlatform": "Amazon",
+    "lastActive": "2026-07-08T06:30:00Z"
+  }
+}

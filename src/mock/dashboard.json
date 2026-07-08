@@ -1,0 +1,41 @@
+{
+  "healthScore": 72,
+  "businessStatus": "Moderate Risk",
+  "totalReviews": 1284,
+  "avgRating": 3.8,
+  "sentimentBreakdown": [
+    { "name": "Positive", "value": 58, "color": "#10b981" },
+    { "name": "Neutral",  "value": 22, "color": "#f59e0b" },
+    { "name": "Negative", "value": 20, "color": "#ef4444" }
+  ],
+  "aspectScores": [
+    { "aspect": "Product Quality", "score": 78 },
+    { "aspect": "Customer Service", "score": 62 },
+    { "aspect": "Delivery Speed",  "score": 55 },
+    { "aspect": "Pricing",         "score": 70 },
+    { "aspect": "Packaging",       "score": 83 }
+  ],
+  "complaintTrend": [
+    { "month": "Jan", "complaints": 45 },
+    { "month": "Feb", "complaints": 52 },
+    { "month": "Mar", "complaints": 38 },
+    { "month": "Apr", "complaints": 61 },
+    { "month": "May", "complaints": 47 },
+    { "month": "Jun", "complaints": 33 }
+  ],
+  "strengths": [
+    { "id": "s1", "title": "High product satisfaction", "description": "78% of reviews mention product quality positively.", "icon": "star" },
+    { "id": "s2", "title": "Strong repeat customers",   "description": "42% of buyers made more than one purchase.",        "icon": "repeat" },
+    { "id": "s3", "title": "Good packaging feedback",   "description": "Packaging scores 83/100 across all regions.",       "icon": "package" }
+  ],
+  "opportunities": [
+    { "id": "o1", "title": "Improve delivery SLA",     "description": "Delivery complaints are up 18% in the last quarter.",     "priority": "high"   },
+    { "id": "o2", "title": "Expand customer support",  "description": "Long response times lead to negative service reviews.",    "priority": "medium" },
+    { "id": "o3", "title": "Competitive pricing tier",  "description": "Price sensitivity detected in 35% of negative reviews.", "priority": "low"    }
+  ],
+  "recentRecommendations": [
+    { "id": "r1", "title": "Offer express shipping",         "category": "Logistics",        "impact": "High",   "effort": "Medium" },
+    { "id": "r2", "title": "Launch loyalty rewards program", "category": "Retention",        "impact": "High",   "effort": "High"   },
+    { "id": "r3", "title": "Add live chat support",          "category": "Customer Service", "impact": "Medium", "effort": "Low"    }
+  ]
+}
