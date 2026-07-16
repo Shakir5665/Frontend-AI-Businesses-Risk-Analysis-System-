@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 import useAuth from './hooks/useAuth';
 
 // Pages
+import LandingPage    from './pages/LandingPage';
 import Dashboard      from './pages/Dashboard';
 import AnalyzeProduct from './pages/AnalyzeProduct';
 import AnalysisResult from './pages/AnalysisResult';
@@ -59,8 +60,10 @@ const AppRoutes = () => (
     <Route path="/profile"               element={<ProtectedRoute><Profile        /></ProtectedRoute>} />
     <Route path="/settings"              element={<ProtectedRoute><Settings       /></ProtectedRoute>} />
 
+    {/* Public landing page */}
+    <Route path="/" element={<LandingPage />} />
+
     {/* Redirects & 404 */}
-    <Route path="/" element={<Navigate to="/dashboard" replace />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
