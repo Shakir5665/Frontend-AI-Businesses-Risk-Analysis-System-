@@ -1,4 +1,4 @@
-import { Brain, Github, Linkedin, Mail } from 'lucide-react';
+import { Brain, Code2, ExternalLink, Mail } from 'lucide-react';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -24,13 +24,13 @@ const Footer = () => {
           className="p-1.5 rounded-lg transition-all hover:bg-white/10 hover:text-white"
           aria-label="GitHub"
         >
-          <Github size={15} />
+          <Code2 size={15} />
         </a>
         <a href="https://linkedin.com" target="_blank" rel="noreferrer"
           className="p-1.5 rounded-lg transition-all hover:bg-white/10 hover:text-white"
           aria-label="LinkedIn"
         >
-          <Linkedin size={15} />
+          <ExternalLink size={15} />
         </a>
         <a href="mailto:support@riskai.com"
           className="p-1.5 rounded-lg transition-all hover:bg-white/10 hover:text-white"
