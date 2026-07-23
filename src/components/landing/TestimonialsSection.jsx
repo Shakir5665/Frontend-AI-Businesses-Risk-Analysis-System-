@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useSpring, useTransform, useInView } from "framer-motion";
 import { Sparkles, ArrowLeft, ArrowRight, Star } from "lucide-react";
+import bgImage from "../../assets/background.png";
 
 // Counter Component
 function Counter({ value, suffix }) {
@@ -117,7 +118,6 @@ export default function TestimonialsSection({ className }) {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const timeoutRef = useRef(null);
-  const [isMounted, setIsMounted] = useState(false);
   const [carouselWidth, setCarouselWidth] = useState(0);
   const carouselTrackRef = useRef(null);
   const [cardWidth, setCardWidth] = useState(660);
@@ -126,21 +126,16 @@ export default function TestimonialsSection({ className }) {
   const resetTimeout = () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     if (!carouselTrackRef.current) return;
     const observer = new ResizeObserver((entries) => {
       if (entries[0]) setCarouselWidth(entries[0].contentRect.width);
     });
     observer.observe(carouselTrackRef.current);
     return () => observer.disconnect();
-  }, [isMounted]);
+  }, []);
 
   useEffect(() => {
-    if (isAutoPlaying && isMounted) {
+    if (isAutoPlaying) {
       resetTimeout();
       timeoutRef.current = setTimeout(() => {
         setIsTransitioning(true);
@@ -148,7 +143,7 @@ export default function TestimonialsSection({ className }) {
       }, 5000);
     }
     return () => resetTimeout();
-  }, [currentIndex, isAutoPlaying, isMounted]);
+  }, [currentIndex, isAutoPlaying]);
 
   useEffect(() => {
     if (currentIndex >= testimonials.length * 2) {
@@ -288,11 +283,13 @@ export default function TestimonialsSection({ className }) {
                         }
                         style={{ width: cardWidth + "px" }}
                       >
-                        {isActive && isMounted && (
+                        {isActive && (
                           <div className="absolute inset-0 z-0">
-                            <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                              <source src="https://cdn.jiro.build/Amox/All%20Images/P01-Header-01-BG.mp4" type="video/mp4" />
-                            </video>
+                            <img
+                              src={bgImage}
+                              alt=""
+                              className="w-full h-full object-cover"
+                            />
                             <div className="absolute inset-0 bg-black/20" />
                           </div>
                         )}

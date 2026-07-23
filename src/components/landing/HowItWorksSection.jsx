@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ArrowUpRight, Check, Link, Search, Brain, BarChart3 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import bgImage from "../../assets/background.png";
+import step1 from "../../assets/Step1.png";
+import step2 from "../../assets/Step2.png";
+import step3 from "../../assets/Step3.png";
+import step4 from "../../assets/Step4.png";
 
 const cn = (...classes) => classes.filter(Boolean).join(" ");
 
@@ -17,7 +22,7 @@ const steps = [
       "Instant URL validation",
       "No manual data entry required",
     ],
-    imgSrc: "https://cdn.jiro.build/Amox/All%20Images/P01-Process-img-01.png",
+    imgSrc: step1,
   },
   {
     id: 2,
@@ -30,7 +35,7 @@ const steps = [
       "Filters spam and duplicates automatically",
       "Preserves review context and star ratings",
     ],
-    imgSrc: "https://cdn.jiro.build/Amox/All%20Images/P01-Process-img-01.png",
+    imgSrc: step2,
   },
   {
     id: 3,
@@ -43,7 +48,7 @@ const steps = [
       "Complaint frequency detection",
       "Business Risk Index (BRI) calculation",
     ],
-    imgSrc: "https://cdn.jiro.build/Amox/All%20Images/P01-Process-img-01.png",
+    imgSrc: step3,
   },
   {
     id: 4,
@@ -56,20 +61,14 @@ const steps = [
       "Evidence-backed review insights",
       "Prioritized AI action recommendations",
     ],
-    imgSrc: "https://cdn.jiro.build/Amox/All%20Images/P01-Process-img-01.png",
+    imgSrc: step4,
   },
 ];
 
 export default function HowItWorksSection({ className }) {
   const [activeTab, setActiveTab] = useState(1);
   const [isHoveringBtn, setIsHoveringBtn] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   const activeStep = steps.find((s) => s.id === activeTab) || steps[0];
 
@@ -239,14 +238,12 @@ export default function HowItWorksSection({ className }) {
 
                   {/* Right Column: UI Card */}
                   <div className="w-full lg:w-[516px] h-[400px] sm:h-[500px] lg:h-[560px] relative rounded-[24px] overflow-hidden flex items-center justify-center">
-                    {/* Video BG */}
-                    <div className="absolute inset-0 z-0">
-                      {isMounted && (
-                        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60">
-                          <source src="https://cdn.jiro.build/Amox/All%20Images/P01-Header-01-BG.mp4" type="video/mp4" />
-                        </video>
-                      )}
-                    </div>
+                    {/* Static background image */}
+                    <img
+                      src={bgImage}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
 
                     {/* Dynamic Image */}
                     <AnimatePresence mode="wait">
