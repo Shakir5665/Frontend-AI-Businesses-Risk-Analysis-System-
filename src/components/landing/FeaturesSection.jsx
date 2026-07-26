@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { PieChart, BarChart3, Target, Sparkles, Zap } from "lucide-react";
+import bgImage from "../../assets/background.png";
+import feature1 from "../../assets/feature1.png";
+import feature2 from "../../assets/feature2.png";
+import feature3 from "../../assets/feature3.png";
+import feature4 from "../../assets/feature4.png";
 
-function FeatureCard({ title, description, icon: Icon, uiSrc, className = "", delay = 0, isMounted = false }) {
+function FeatureCard({ title, description, icon: Icon, uiSrc, className = "", delay = 0 }) {
   return (
     <motion.div
       initial={{ y: 40, opacity: 0 }}
@@ -11,20 +16,18 @@ function FeatureCard({ title, description, icon: Icon, uiSrc, className = "", de
       transition={{ duration: 0.8, delay, ease: [0.21, 0.45, 0.32, 0.9] }}
       className={"flex flex-col items-start shrink-0 border border-[#042718]/10 overflow-hidden bg-white group w-full rounded-[24px] sm:rounded-[32px] " + (className || "")}
     >
-      <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] overflow-hidden flex items-center justify-center p-6 sm:p-8 bg-[#F9FAFB]">
-        {isMounted && (
-          <video
-            autoPlay loop muted playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
-          >
-            <source src="https://cdn.jiro.build/Amox/All%20Images/P01-Header-01-BG.mp4" type="video/mp4" />
-          </video>
-        )}
+      <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] overflow-hidden flex items-center justify-center p-6 sm:p-8">
+        {/* Static background image */}
+        <img
+          src={bgImage}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+        />
         <div className="relative z-10 w-full h-full flex items-center justify-center">
           <img
             src={uiSrc}
             alt={title}
-            className="h-full w-full object-contain pointer-events-none select-none transition-all duration-500 group-hover:translate-y-[-10px]"
+            className="h-full w-full object-contain pointer-events-none select-none transition-all duration-500 group-hover:translate-y-[-10px] drop-shadow-xl"
           />
         </div>
       </div>
@@ -50,37 +53,31 @@ function FeatureCard({ title, description, icon: Icon, uiSrc, className = "", de
 }
 
 export default function FeaturesSection({ className }) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   const cards = [
     {
       title: "AI Sentiment Analysis",
       description: "Automatically classify thousands of customer reviews as positive, neutral, or negative using advanced NLP sentiment detection models.",
       icon: PieChart,
-      uiSrc: "https://cdn.jiro.build/Amox/All%20SVG/P01-Feature-UI-01.svg",
+      uiSrc: feature1,
     },
     {
       title: "Business Risk Index (BRI)",
       description: "Get a single, actionable risk score calculated from complaint frequency, aspect failures, and negative sentiment trends across reviews.",
       icon: BarChart3,
-      uiSrc: "https://cdn.jiro.build/Amox/All%20SVG/P01-Feature-UI-02.svg",
+      uiSrc: feature2,
     },
     {
       title: "Aspect-Based Analysis",
       description: "Identify which product aspects — quality, delivery, packaging, customer service — are praised or criticized most by your real customers.",
       icon: Target,
-      uiSrc: "https://cdn.jiro.build/Amox/All%20SVG/P01-Feature-UI-03.svg",
+      uiSrc: feature3,
     },
     {
       title: "AI-Generated Recommendations",
       description: "Receive prioritized, AI-generated action items tailored to your specific business weaknesses, risks, and identified opportunities for improvement.",
       icon: Zap,
-      uiSrc: "https://cdn.jiro.build/Amox/All%20SVG/P01-Feature-UI-04.svg",
+      uiSrc: feature4,
     },
   ];
 
@@ -143,7 +140,6 @@ export default function FeaturesSection({ className }) {
                   description={card.description}
                   icon={card.icon}
                   uiSrc={card.uiSrc}
-                  isMounted={isMounted}
                   delay={0.2 + idx * 0.1}
                   className="w-full"
                 />

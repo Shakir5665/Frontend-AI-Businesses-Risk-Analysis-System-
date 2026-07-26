@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ArrowUpRight, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import bgImage from "../../assets/background.png";
 
 const plans = [
   {
@@ -69,9 +70,11 @@ function PricingCard({ plan, isVisualActive, onClick, onMouseEnter, onMouseLeave
             transition={{ duration: 0.6 }}
             className="absolute inset-0 z-0"
           >
-            <video autoPlay loop muted playsInline className="w-full h-full object-cover" suppressHydrationWarning>
-              <source src="https://cdn.jiro.build/Amox/All%20Images/P01-Header-01-BG.mp4" type="video/mp4" />
-            </video>
+            <img
+              src={bgImage}
+              alt=""
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-[#D4E8E1]/15 backdrop-blur-[4px]" />
           </motion.div>
         )}
@@ -149,12 +152,6 @@ export default function PricingSection({ className }) {
   const [isMonthly, setIsMonthly] = useState(true);
   const [activePlan, setActivePlan] = useState("Pro Plan");
   const [hoveredPlan, setHoveredPlan] = useState(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <>
@@ -238,7 +235,7 @@ export default function PricingSection({ className }) {
                   <PricingCard
                     plan={plan}
                     isMonthly={isMonthly}
-                    isVisualActive={mounted && isVisualActive}
+                    isVisualActive={isVisualActive}
                     onClick={() => setActivePlan(plan.name)}
                     onMouseEnter={() => setHoveredPlan(plan.name)}
                     onMouseLeave={() => setHoveredPlan(null)}
